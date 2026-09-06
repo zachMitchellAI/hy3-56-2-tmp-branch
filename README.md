@@ -1,5 +1,3 @@
-<img align="right" style="width: 256px" src="assets/logo.svg">
-
 # Vibe-coded fix
 
 I didn't feel like going a version down on hyprland; since I wanted to hy3 I threw the existing compilation issues over to GLM3.5-flash. It was able to fix the issue & get it to run!
@@ -19,6 +17,10 @@ Build system: added lua to pkg_check_modules in CMakeLists.txt:14 — Hyprland 0
 ```
 
 **Full Disclaimer:** I don't have working knowledge of C++, so take this change for what it is - a proof of concept unless otherwise utilized.
+
+## [View Changes](https://github.com/outfoxxed/hy3/compare/master...zachMitchellAI:hy3-56-2-tmp-branch:master)
+
+<img align="right" style="width: 256px" src="assets/logo.svg">
 
 # hy3
 <a href="https://matrix.to/#/#hy3:outfoxxed.me"><img src="https://img.shields.io/badge/Join%20the%20matrix%20room-%23hy3:outfoxxed.me-0dbd8b?logo=matrix&style=flat-square"></a>
