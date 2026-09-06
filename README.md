@@ -1,5 +1,25 @@
 <img align="right" style="width: 256px" src="assets/logo.svg">
 
+# Vibe-coded fix
+
+I didn't feel like going a version down on hyprland; since I wanted to hy3 I threw the existing compilation issues over to GLM3.5-flash. It was able to fix the issue & get it to run!
+
+It's own personal comments:
+
+```md
+It builds now. The plugin was written against an older Hyprland API; here's what 0.56.2 changed and the fixes I made:
+API changes:
+- window->m_hints / WINDOW_HINT_URGENT → plain bool m_isUrgent (main.cpp:136, Hy3Node.cpp:577)
+- presentation().refreshValues() → updateDecorationValues() (Hy3Layout.cpp:422, Hy3Node.cpp:538)
+- presentation().borderSize() → getRealBorderSize() (TabGroup.cpp:808)
+- metadata().title() → m_title (Hy3Node.cpp:551)
+- isFloating() → m_isFloating, mapped() → m_isMapped, shouldntFocus() → m_X11ShouldntFocus, backend().traits().overrideRedirect → isX11OverrideRedirect() (Hy3Layout.cpp)
+- <hyprland/src/desktop/view/window/WindowPresentation.hpp> no longer exists → <hyprland/src/desktop/view/Window.hpp> (Hy3Layout.cpp, Hy3Node.cpp, TabGroup.cpp)
+Build system: added lua to pkg_check_modules in CMakeLists.txt:14 — Hyprland 0.56's config headers unconditionally include LuaBindings.hpp, which needs Lua dev headers (found at /usr/include/lua5.5 on your system).
+```
+
+**Full Disclaimer:** I don't have working knowledge of C++, so take this change for what it is - a proof of concept unless otherwise utilized.
+
 # hy3
 <a href="https://matrix.to/#/#hy3:outfoxxed.me"><img src="https://img.shields.io/badge/Join%20the%20matrix%20room-%23hy3:outfoxxed.me-0dbd8b?logo=matrix&style=flat-square"></a>
 
